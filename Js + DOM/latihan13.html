@@ -1,0 +1,72 @@
+<html>
+<style>
+    #objek {
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        background-color: red;
+        animation: animasi1 4s ease infinite 0s, animasi2 4s ease infinite 0s;
+        /* animation-name: animasi1; */
+        /* animation-duration: 4s; */
+        /* animation-timing-function: linear; */
+        /* gerak arah laju : ease,linear*/
+        /* animation-iteration-count: infinite; */
+        /* jumlah pengulangan laju:  1 2 atau infinite*/
+        /* animation-direction: normal; */
+        /* arah laju gerak : normal,reverse,alternate,alternate-reverse*/
+        /* animation-play-state: running; */
+        /* keadaan animasi : running,pause*/
+        /* animation-delay: 0s; */
+        /* waktu keadaan */
+        /* animation-fill-mode: none; */
+        /* menentukan posisi : none,forwards */
+    }
+    
+    @keyframes animasi1 {
+        0% {
+            transform: translateX(500px)
+        }
+        10% {
+            transform: translateX(100px)
+        }
+        30% {
+            transform: translateX(50px) translateY(100px)
+        }
+        50% {
+            transform: translateX(400px) translateY(100px)
+        }
+        70% {
+            transform: translateX(300px) translateY(200px)
+        }
+        90% {
+            transform: translateX(100px) translateY(200px)
+        }
+        100% {
+            transform: translateX(0) translateY(0)
+        }
+    }
+    
+    @keyframes animasi2 {
+        0% {
+            border-radius: 100%;
+            background: blue;
+        }
+        100% {
+            border-radius: 0%;
+            background: red;
+        }
+    }
+</style>
+
+<body>
+    <div id="objek"></div>
+</body>
+<script>
+    // var animasi = document.getElementById('objek');
+
+    // animasi.addEventListener('mouseover', function() {
+    //     animasi.style.animationPlayState = pause;
+    // })
+</script>
+
+</html>

@@ -1,0 +1,132 @@
+<html>
+<style>
+    table,
+    tr,
+    td {
+        padding: 10px;
+        border-collapse: collapse;
+        border-bottom: 1px solid rgba(200, 200, 200, 0.9);
+        background: rgba(230, 230, 230, 0.1);
+        border-radius: 10px;
+    }
+    
+    input {
+        border: 1px solid rgba(180, 176, 176, 0.575);
+        height: 26px;
+        border-radius: 5px;
+        padding-left: 10px;
+    }
+    
+    .table2 {
+        border: transparent;
+        background: transparent;
+    }
+    
+    .table2 tr {
+        border: transparent;
+        background: transparent;
+    }
+    
+    .table2 tr td {
+        border: transparent;
+        background: transparent;
+        padding: 5px;
+    }
+    
+    .nilai {
+        width: 70px;
+    }
+    
+    button {
+        width: 90px;
+        height: 30px;
+        background: rgba(219, 217, 217, 0.575);
+        border: 1px solid rgba(200, 200, 200, 0.9);
+    }
+    
+    button:hover {
+        background: rgba(156, 153, 153, 0.829);
+    }
+</style>
+
+<body>
+    <center>
+        <table>
+            <tr>
+                <td>Nim</td>
+                <td><input type="text" id="input"></td>
+            </tr>
+            <tr>
+                <td>Nama</td>
+                <td><input type="text" id="input"></td>
+            </tr>
+            <tr>
+                <td>Nilai</td>
+                <td>
+                    <table class="table2">
+                        <tr>
+                            <td>Absen</td>
+                            <td><input type="input" class="nilai"></td>
+                        </tr>
+                        <tr>
+                            <td>Tugas</td>
+                            <td><input type="input" class="nilai"></td>
+                        </tr>
+                        <tr>
+                            <td>UTS</td>
+                            <td><input type="input" class="nilai"></td>
+                        </tr>
+                        <tr>
+                            <td>UAS</td>
+                            <td><input type="input" class="nilai"></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>Index</td>
+                <td><input type="input"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button id="submie">Submit</button></td>
+            </tr>
+        </table>
+    </center>
+</body>
+<script>
+    function mahasiswa(nim, nama, nilaiAkhir, index) {
+        this.nim = nim;
+        this.nama = nama;
+        this.nilai = nilaiAkhir;
+        this.index = index;
+        this.inputNilai = function(absen, tugas, uts, uas) {
+            this.absen = absen;
+            this.tugas = tugas;
+            this.uts = uts;
+            this.uas = uas;
+            // nilai absen 10%, tugas 20% uts 30% uas 40%
+            this.nilai.push(this.absen * 0.1, this.tugas * 0.2, this.uts * 0.3, this.uas * 0.4);
+            nilaiAkhir = this.absen * 0.1 + this.tugas * 0.2 + this.uts * 0.3 + this.uas * 0.4;
+
+            if (nilaiAkhir >= 80) {
+                this.index = 'A';
+            } else if (nilaiAkhir >= 70) {
+                this.index = 'B';
+            } else if (nilaiAkhir >= 60) {
+                this.index = 'C';
+            } else if (nilaiAkhir >= 50) {
+                this.index = 'D';
+            } else {
+                this.index = 'E';
+            };
+            return nilaiAkhir;
+        };
+    };
+
+    var siswa1 = new mahasiswa('10116136', 'herdita', [], '');
+    // var siswa2 = new mahasiswa('10116136', 'herdita', [], '');
+    // var siswa3 = new mahasiswa('10116136', 'herdita', [], '');
+    // var siswa4 = new mahasiswa('10116136', 'herdita', [], '');
+</script>
+
+</html>

@@ -1,0 +1,190 @@
+<html>
+
+<head>
+    <title></title>
+</head>
+<style>
+    #judul {
+        color: whitesmoke;
+    }
+    
+    .div {
+        background-color: silver;
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+        float: left;
+        cursor: pointer;
+        border-radius: 6px;
+        box-shadow: -1px 1px 6px 1px gray;
+        transition: background-color 0.5s linear 0s, width 0.5s ease 0s;
+    }
+    
+    #jumlah {
+        margin-top: 20px;
+        font-size: 20px;
+    }
+    
+    #hasil {
+        margin-top: 20px;
+        font-size: 50px;
+        font-weight: bold;
+    }
+    
+    button {
+        width: 130px;
+        height: 40px;
+        background-color: dodgerblue;
+        color: whitesmoke;
+        border: transparent;
+        border-radius: 5px;
+        box-shadow: 1px 1px 2px gray;
+        margin: 10px 0px 0px 10px;
+    }
+    
+    button:hover {
+        background: blue;
+        color: white;
+        transition: background-color 0.5s linear 0s, width 0.5s ease 0s;
+    }
+</style>
+
+<body>
+    <div id="judul">0</div>
+    <h1> Game Tebak Warna Biru </h1>
+
+    <div id="div1" class="div"></div>
+    <div id="div2" class="div"></div>
+    <div id="div3" class="div"></div>
+    <br style="clear:both">
+
+    <div id="div4" class="div"></div>
+    <div id="div5" class="div"></div>
+    <div id="div6" class="div"></div>
+
+    <br style="clear:both">
+    <div id="div7" class="div"></div>
+    <div id="div8" class="div"></div>
+    <div id="div9" class="div"></div>
+
+    <br style="clear:both">
+    <button id="button">Start</button>
+
+    <br style="clear:both"><br>
+    <div id="jumlah"></div>
+    <div id="hasil"></div>
+
+
+</body>
+<script>
+    function start() {
+        var judul = document.getElementById('judul');
+        var kotak = document.getElementsByClassName('div');
+        var jumlah = document.getElementById('jumlah');
+        var hasil = document.getElementById('hasil');
+        var button = document.getElementById('button');
+        var tebak = Math.floor((Math.random() * 9) + 1);
+
+        judul.innerHTML = tebak;
+        var inisial = false;
+        var klik = 0;
+
+
+        function jumlahKlik(klik) {
+            jumlah.innerHTML = "Jumlah Klik = " + klik;
+        };
+
+        function hasilKlik(ketemu, klik) {
+            if ((ketemu == "sudah") && (klik <= 3)) {
+                hasil.innerHTML = "You Win";
+                inisial = true;
+            } else if ((ketemu == "belum") && (klik >= 3) && (inisial == false)) {
+                hasil.innerHTML = "You Lose";
+            };
+        };
+
+        function nilaiBox() {
+            if (nilai == tebak) {
+                kotak[i].style.background = "blue";
+                ketemu = "sudah";
+            } else {
+                kotak[i].style.background = "red";
+                ketemu = "belum"
+            };
+
+            klik++;
+            jumlahKlik(klik);
+            hasilKlik(ketemu, klik);
+        };
+
+
+        function box0() {
+            nilai = 1;
+            i = 0;
+            nilaiBox(i);
+        }
+
+        function box1() {
+            nilai = 2;
+            i = 1;
+            nilaiBox(i);
+        }
+
+        function box2() {
+            nilai = 3;
+            i = 2;
+            nilaiBox(i);
+        }
+
+        function box3() {
+            nilai = 4;
+            i = 3;
+            nilaiBox(i);
+        }
+
+        function box4() {
+            nilai = 5;
+            i = 4;
+            nilaiBox(i);
+        }
+
+        function box5() {
+            nilai = 6;
+            i = 5;
+            nilaiBox(i);
+        }
+
+        function box6() {
+            nilai = 7;
+            i = 6;
+            nilaiBox(i);
+        }
+
+        function box7() {
+            nilai = 8;
+            i = 7;
+            nilaiBox(i);
+        }
+
+        function box8() {
+            nilai = 9;
+            i = 8;
+            nilaiBox(i);
+        }
+
+
+        kotak[0].addEventListener('click', box0);
+        kotak[1].addEventListener('click', box1);
+        kotak[2].addEventListener('click', box2);
+        kotak[3].addEventListener('click', box3);
+        kotak[4].addEventListener('click', box4);
+        kotak[5].addEventListener('click', box5);
+        kotak[6].addEventListener('click', box6);
+        kotak[7].addEventListener('click', box7);
+        kotak[8].addEventListener('click', box8);
+    };
+
+    button.addEventListener('click', start);
+</script>
+
+</html>

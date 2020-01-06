@@ -1,0 +1,42 @@
+<html>
+<style>
+    .table_edit {
+        background: yellow;
+        color: white;
+    }
+</style>
+
+<body>
+    <!-- //mengubah atribut dalam java script -->
+    <div id="box1">
+        <div id="p1">Paragrap</div>
+    </div>
+
+    <div class="boxes"></div>
+    <div class="boxes"></div>
+    <div class="boxes"></div>
+
+    <img src="img1.png" alt="" width=300 id="img">
+    <br>
+    <input type="text" value=10 id="input">
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+
+    <script>
+        var img = document.getElementById('img');
+        img.width = 500;
+        img.border = 1;
+        img.setAttribute('class', 'table_edit');
+        img.setAttribute('height', '400');
+
+        var input = document.getElementById('input');
+        input.value = 'kamu belajar ga ';
+        input.size = 100;
+        input.placeholder = 'pada suatu hari';
+    </script>
+</body>
+
+</html>

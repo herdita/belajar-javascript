@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <title> latihan 2</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //this
+    var a = 10;
+    console.log(window.a); //this.a
+
+    // cara 1 - function declaration
+    // function hallo(){
+    //     console.log(this);
+    //     console.log('hallo');
+    // };
+    // this.halo();
+    // // this mengembalikan object globar
+
+    // cara 2 - object literal
+    // var obj = {};
+    // obj.halo = function() {
+    //     console.log(this);
+    //     console.log('hallo');
+    // }
+    // obj.halo();
+    // this mengembalikan object yang bersangkutan
+
+    // cara 3 - constructor
+    function halo() {
+        console.log(this);
+        console.log('hallo');
+    }
+    var obj1 = new halo();
+    var obj2 = new halo();
+    //this mengembalikan object yang baru dibuat
+</script>
+
+</html>

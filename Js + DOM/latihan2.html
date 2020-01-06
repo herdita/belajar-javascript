@@ -1,0 +1,56 @@
+<html>
+
+<body>
+    <div id="box1">
+        <div id="p1">Paragrap</div>
+    </div>
+
+    <div class="boxes"></div>
+    <div class="boxes"></div>
+    <div class="boxes"></div>
+
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+
+    <script>
+        // penggunaan dom ke html
+        //     document.getElementById('id');
+        //     document.getElementsByClassName('class');
+        //     document.getElementsByTagName('tag');
+        // penggunaan objek dom di js
+        //     document.createElement("element html");
+        //     document.createTextNode("String asal");
+        // penghubung objek dengan objek js
+        //     objek.appendChild(objek);
+        // menghapus objek dengan objek js
+        //     objek.removeChild(objek);
+        // replace objek
+        //     objek.replaceChild(objek);
+
+        //edit HTML
+
+        var el = document.createElement("h1");
+        var text = document.createTextNode("Nama saya herdita permana");
+        var box1 = document.getElementById('box1');
+
+        el.appendChild(text);
+        box1.appendChild(el);
+
+        //menghapus
+        // box1.removeChild(el);
+
+        //mengedit
+        var el2 = document.createElement('h3');
+        var text2 = document.createTextNode('Sudah diganti');
+        el2.appendChild(text2);
+
+        var p1 = document.getElementById('p1');
+
+        box1.replaceChild(el2, p1);
+    </script>
+</body>
+
+</html>

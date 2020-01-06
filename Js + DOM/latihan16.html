@@ -1,0 +1,304 @@
+<html>
+
+<head>
+    <title></title>
+</head>
+<style>
+    .div {
+        background-color: silver;
+        width: 100px;
+        height: 100px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        float: left;
+        cursor: pointer;
+    }
+    
+    .div:hover {}
+</style>
+
+<body>
+
+    <div id="div1" class="div"></div>
+    <div id="div2" class="div"></div>
+    <div id="div3" class="div"></div>
+    <br style="clear:both">
+
+    <div id="div4" class="div"></div>
+    <div id="div5" class="div"></div>
+    <div id="div6" class="div"></div>
+
+    <br style="clear:both">
+    <div id="div7" class="div"></div>
+    <div id="div8" class="div"></div>
+    <div id="div9" class="div"></div>
+
+    <br style="clear:both">
+    <button id="klik">Start</button>
+    <button id="klik1">Refresh</button>
+</body>
+<script>
+    var y = 9;
+    var x = 1;
+
+    // var div1 = document.getElementById('div1');
+    // var div2 = document.getElementById('div2');
+    // var div3 = document.getElementById('div3');
+    // var div4 = document.getElementById('div4');
+    // var div5 = document.getElementById('div5');
+    // var div6 = document.getElementById('div6');
+    // var div7 = document.getElementById('div7');
+    // var div8 = document.getElementById('div8');
+    // var div9 = document.getElementById('div9');
+    // var div10 = document.getElementById('div10');
+
+    var div = [];
+    for (var i = 1; i <= 9; i++) {
+        div[i] = document.getElementById('div' + i);
+        console.log(div[i]);
+    };
+
+    var button = document.getElementById('klik');
+    var button1 = document.getElementById('klik1');
+    var acak = Math.floor((Math.random() * y) + x);
+
+    button.addEventListener('click', function() {
+        // for (var i = 0; i <= 8; i++) {
+
+        div[1].addEventListener('click', function() {
+
+            // var klik = 0;
+            // for (var i = 1; i <= 9; i++) {
+            //     div[i] = klik + i;
+            // };
+            var klik = 0;
+            var ketemu = klik + 1;
+
+            if (ketemu == acak) {
+                div1.style.background = "green";
+                var hasil1 = 1;
+            } else {
+                div1.style.background = "blue";
+            };
+            if (hasil1 == 1) {
+                alert("Selamat anda berhasil Mencarinya");
+            }
+        });
+        // }
+
+        div[2].addEventListener('click', function() {
+
+            // var klik = 0;
+            // for (var i = 1; i <= 9; i++) {
+            //     div[i] = klik + i;
+            // };
+            var klik = 0;
+            var ketemu = klik + 1;
+
+            if (ketemu == acak) {
+                div2.style.background = "green";
+                var hasil2 = 1;
+            } else {
+                div2.style.background = "blue";
+            };
+            if (hasil2 == 1) {
+                alert("Selamat anda berhasil Mencarinya");
+            }
+        });
+
+        div[3].addEventListener('click', function() {
+
+            // var klik = 0;
+            // for (var i = 1; i <= 9; i++) {
+            //     div[i] = klik + i;
+            // };
+            var klik = 0;
+            var ketemu = klik + 1;
+
+            if (ketemu == acak) {
+                div3.style.background = "green";
+                var hasil3 = 1;
+            } else {
+                div3.style.background = "blue";
+            };
+            if (hasi3 == 1) {
+                alert("Selamat anda berhasil Mencarinya");
+            }
+        });
+
+        div[4].addEventListener('click', function() {
+
+            // var klik = 0;
+            // for (var i = 1; i <= 9; i++) {
+            //     div[i] = klik + i;
+            // };
+            var klik = 0;
+            var ketemu = klik + 1;
+
+            if (ketemu == acak) {
+                div4.style.background = "green";
+                var hasil4 = 1;
+            } else {
+                div4.style.background = "blue";
+            };
+            if (hasil4 == 1) {
+                alert("Selamat anda berhasil Mencarinya");
+            }
+        });
+
+        div[5].addEventListener('click', function() {
+
+            // var klik = 0;
+            // for (var i = 1; i <= 9; i++) {
+            //     div[i] = klik + i;
+            // };
+            var klik = 0;
+            var ketemu = klik + 1;
+
+            if (ketemu == acak) {
+                div5.style.background = "green";
+                var hasil5 = 1;
+            } else {
+                div5.style.background = "blue";
+            };
+            if (hasil5 == 1) {
+                alert("Selamat anda berhasil Mencarinya");
+            }
+        });
+
+        div[6].addEventListener('click', function() {
+
+            // var klik = 0;
+            // for (var i = 1; i <= 9; i++) {
+            //     div[i] = klik + i;
+            // };
+            var klik = 0;
+            var ketemu = klik + 1;
+
+            if (ketemu == acak) {
+                div6.style.background = "green";
+                var hasil6 = 1;
+            } else {
+                div6.style.background = "blue";
+            };
+            if (hasil6 == 1) {
+                alert("Selamat anda berhasil Mencarinya");
+            }
+        });
+
+        div[7].addEventListener('click', function() {
+
+            // var klik = 0;
+            // for (var i = 1; i <= 9; i++) {
+            //     div[i] = klik + i;
+            // };
+            var klik = 0;
+            var ketemu = klik + 1;
+
+            if (ketemu == acak) {
+                div7.style.background = "green";
+                var hasil7 = 1;
+            } else {
+                div7.style.background = "blue";
+            };
+            if (hasil7 == 1) {
+                alert("Selamat anda berhasil Mencarinya");
+            }
+        });
+
+        div[8].addEventListener('click', function() {
+
+            // var klik = 0;
+            // for (var i = 1; i <= 9; i++) {
+            //     div[i] = klik + i;
+            // };
+            var klik = 0;
+            var ketemu = klik + 1;
+
+            if (ketemu == acak) {
+                div8.style.background = "green";
+                var hasil8 = 1;
+            } else {
+                div8.style.background = "blue";
+            };
+            if (hasil8 == 1) {
+                alert("Selamat anda berhasil Mencarinya");
+            }
+        });
+
+        div[9].addEventListener('click', function() {
+
+            // var klik = 0;
+            // for (var i = 1; i <= 9; i++) {
+            //     div[i] = klik + i;
+            // };
+            var klik = 0;
+            var ketemu = klik + 1;
+
+            if (ketemu == acak) {
+                div9.style.background = "green";
+                var hasil9 = 1;
+            } else {
+                div9.style.background = "blue";
+            };
+            if (hasil9 == 1) {
+                alert("Selamat anda berhasil Mencarinya");
+            }
+        });
+    });
+    // div2.addEventListener('click', function() {
+    //     ketemu = 2;
+    // });
+
+    // div3.addEventListener('click', function() {
+    //     ketemu = 3;
+    // });
+
+    // div4.addEventListener('click', function() {
+    //     ketemu = 4;
+    // });
+
+    // div5.addEventListener('click', function() {
+    //     ketemu = 5;
+    // });
+
+    // div6.addEventListener('click', function() {
+    //     ketemu = 6;
+    // });
+
+    // div7.addEventListener('click', function() {
+    //     ketemu = 7;
+    // });
+
+    // div8.addEventListener('click', function() {
+    //     ketemu = 8;
+    // });
+
+    // div9.addEventListener('click', function() {
+    //     ketemu = 9;
+    // });
+
+
+    // var acak = Math.floor((Math.random() * y) + x);
+    // var box_ajaib = "div" + acak;
+
+
+
+
+    // var kotak = document.querySelectorAll('.div');
+    // for (var i = 0; i <= 9; i++) {
+    //     kotak[i].addEventListener('click', function() {
+    //         for (var i = 0; i <= 9; i++) {
+    //             div[i].style.background = "green";
+    //         }
+    //     });
+    // }
+
+
+
+    // button1.addEventListener('click', function() {
+
+    // });
+</script>
+
+</html>

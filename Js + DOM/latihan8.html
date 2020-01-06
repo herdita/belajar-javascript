@@ -1,0 +1,80 @@
+<html>
+
+<style>
+    input {
+        width: 150px;
+        padding: 3px;
+        color: black;
+        border: 1px solid black;
+    }
+    
+    table tr td {
+        padding-right: 5px;
+        padding-bottom: 10px;
+    }
+</style>
+
+<body>
+    <input type="text" id="inputNama" placeholder="Nama"><br><br>
+    <input type="text" id="inputNilai" placeholder="Nilai"><br><br>
+    <button id="submit"> Submit </button><br>
+    <br>
+    <table>
+        <tr>
+            <td>Nama </td>
+            <td>:</td>
+            <td><span id="outputNama"></span></td>
+        </tr>
+        <tr>
+            <td>Nilai </td>
+            <td>:</td>
+            <td><span id="outputNilai"></span></td>
+        </tr>
+        <tr>
+            <td>Index </td>
+            <td>:</td>
+            <td><span id="index"></span></td>
+        </tr>
+    </table>
+</body>
+
+<script>
+    var nama = document.getElementById('inputNama');
+    var nilai = document.getElementById('inputNilai');
+    var submit = document.getElementById('submit');
+    var outNama = document.getElementById('outputNama');
+    var outNilai = document.getElementById('outputNilai');
+    var index = document.getElementById('index');
+
+    function tampilNama() {
+        var text = nama.value;
+        outNama.innerHTML = text;
+    }
+
+    function tampilNilai() {
+        textNilai = nilai.value;
+        outNilai.innerHTML = textNilai;
+    }
+
+    function tampilIndex() {
+        if (textNilai > 80) {
+            nilaiIdx = 'A'
+        } else if (textNilai > 70) {
+            nilaiIdx = 'B'
+        } else if (textNilai > 60) {
+            nilaiIdx = 'C'
+        } else if (textNilai > 50) {
+            nilaiIdx = 'D'
+        } else {
+            nilaiIdx = 'Tidak Lulus'
+        }
+        var text = nilaiIdx;
+        index.innerHTML = text;
+    }
+
+    submit.addEventListener('click', tampilNama);
+    submit.addEventListener('click', tampilNilai);
+    submit.addEventListener('click', tampilIndex);
+</script>
+
+</html>

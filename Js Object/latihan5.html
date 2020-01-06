@@ -1,0 +1,165 @@
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>Nama</td>
+            <td><input type="text" id="nama"></td>
+        </tr>
+        <tr>
+            <td>Negara</td>
+            <td><input type="text" id="negara"></td>
+        </tr>
+        <tr>
+            <td>Umur</td>
+            <td><input type="text" id="umur"></td>
+        </tr>
+    </table>
+
+    <br>
+    <button id="submit">data1</button>
+    <button id="submit">data2</button>
+    <button id="submit">data3</button><br><br>
+
+
+    <div>Data pemain 1</div>
+    <table>
+        <tr>
+            <td>Nama</td>
+            <td>
+                <div id="input_hasil"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Negara</td>
+            <td>
+                <div id="input_hasil"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>umur</td>
+            <td>
+                <div id="input_hasil"></div>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <div>Data pemain 2</div>
+    <table>
+        <tr>
+            <td>Nama</td>
+            <td>
+                <div id="input_hasil"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Negara</td>
+            <td>
+                <div id="input_hasil"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>umur</td>
+            <td>
+                <div id="input_hasil"></div>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <div>Data pemain 3</div>
+    <table>
+        <tr>
+            <td>Nama</td>
+            <td>
+                <div id="input_hasil"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Negara</td>
+            <td>
+                <div id="input_hasil"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>umur</td>
+            <td>
+                <div id="input_hasil"></div>
+            </td>
+        </tr>
+    </table>
+</body>
+<script>
+    // var i = 19;
+    // var programmers = {
+    //     nama: "herdita",
+    //     alamat: "bandung",
+    //     umur: i + " tahun",
+    //     tampil_data: function() {
+    //         return "nama : " + this.nama + "  alamat : " + this.alamat + "  umur : " + this.umur;
+    //     },
+    //     merubah: function(nama, alamat) {
+    //         this.nama = nama;
+    //         this.alamat = alamat;
+    //     }
+    // };
+
+    // programmers.merubah("dita", "sogar");
+    // document.getElementById('box').innerHTML = programmers.tampil_data();
+
+    var nama_input = document.getElementById('nama');
+    var negara_input = document.getElementById('negara');
+    var umur_input = document.getElementById('umur');
+    var submit = document.querySelectorAll('#submit');
+    var input_hasil = document.querySelectorAll('#input_hasil');
+
+
+    function pemain_bola(nama, negara, umur) {
+        this.nama = nama;
+        this.negara = negara;
+        this.umur = umur;
+    };
+
+    function value_input() {
+        nama_value = nama_input.value;
+        negara_value = negara_input.value;
+        umur_value = umur_input.value;
+    };
+
+    submit[0].addEventListener('click', function() {
+        pemain_bola(nama, negara, umur);
+        value_input();
+        var pemain1 = new pemain_bola(nama_value, negara_value, umur_value);
+        input_hasil[0].innerHTML = pemain1.nama;
+        input_hasil[1].innerHTML = pemain1.negara;
+        input_hasil[2].innerHTML = pemain1.umur;
+    });
+
+    submit[1].addEventListener('click', function() {
+        pemain_bola(nama, negara, umur);
+        value_input();
+        var pemain2 = new pemain_bola(nama_value, negara_value, umur_value);
+        input_hasil[3].innerHTML = pemain2.nama;
+        input_hasil[4].innerHTML = pemain2.negara;
+        input_hasil[5].innerHTML = pemain2.umur;
+    });
+
+    submit[2].addEventListener('click', function() {
+        pemain_bola(nama, negara, umur);
+        value_input();
+        var pemain3 = new pemain_bola(nama_value, negara_value, umur_value);
+        input_hasil[6].innerHTML = pemain3.nama;
+        input_hasil[7].innerHTML = pemain3.negara;
+        input_hasil[8].innerHTML = pemain3.umur;
+    });
+
+
+    // var desainer = new Object();
+    // desainer.nama = "herdita";
+    // desainer.umur = i;
+</script>
+
+</html>

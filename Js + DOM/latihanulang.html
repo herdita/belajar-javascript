@@ -1,0 +1,34 @@
+<html>
+
+<style>
+    .imgsize {
+        width: 300px;
+        height: auto;
+    }
+</style>
+
+<body>
+    <img src="img1.png" alt="" id="img"><br>
+    <button id="merah"> Merah </button>
+    <button id="kuning"> Kuning </button>
+</body>
+
+<script>
+    var img = document.getElementById('img');
+    img.setAttribute('class', 'imgsize');
+    var submitMerah = document.getElementById('merah');
+    var submitKuning = document.getElementById('kuning');
+
+    function imgMerah() {
+        img.style.background = "red";
+    };
+
+    function imgKuning() {
+        img.style.background = "yellow";
+    }
+
+    submitMerah.addEventListener('click', imgMerah);
+    submitKuning.addEventListener('click', imgKuning);
+</script>
+
+</html>

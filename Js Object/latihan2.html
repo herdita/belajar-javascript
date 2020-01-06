@@ -1,0 +1,52 @@
+<html>
+
+<head>
+    <title> latihan 2</title>
+</head>
+
+<body>
+
+
+</body>
+<script>
+    //object leteral
+    var mhs1 = {
+        //property
+        nama: "herdita permana",
+        nrp: "10116136",
+        email: "herditapermana@gmail.com",
+        jurusan: "teknik informatika"
+    }
+
+    var mhs2 = {
+        //property
+        nama: "permana",
+        nrp: "10116136",
+        email: "herditapermana@gmail.com",
+        jurusan: "teknik informatika"
+    }
+
+    //function declaration
+    function buatObjectMhs(nama, nrp, email, jurusan) {
+        var mhs = {};
+        mhs.nama = nama;
+        mhs.nrp = nrp;
+        mhs.email = email;
+        mhs.jurusan = jurusan;
+        return mhs;
+    }
+
+    var mhs3 = buatObjectMhs('herdita', '100123', 'herdita@gmail', 'teknik informatika');
+
+    //contructor {yang khusus untuk membuat object}
+    function Mahasiswa(nama, nrp, email, jurusan) {
+        this.nama = nama;
+        this.nrp = nrp;
+        this.email = email;
+        this.jurusan = jurusan;
+    }
+
+    var mahasiswa = new Mahasiswa('erik', '123', 'fasdfas', 'teknik');
+</script>
+
+</html>

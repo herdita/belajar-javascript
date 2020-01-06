@@ -1,0 +1,238 @@
+<html>
+<style>
+    .table1 {
+        border: 1px solid black;
+    }
+    
+    .table1 tr td {
+        padding: 10px;
+    }
+    
+    .table1 {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    
+    .table1 tr {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    
+    .table1 td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    
+    input {
+        border: 1px solid black;
+        width: 30px;
+        padding: 2px 0px 2px 9px;
+    }
+    
+    #inputjumlah {
+        width: 50px;
+        padding: 2px 7px 2px 7px;
+    }
+    
+    #inputsubmit {
+        margin-left: 5px;
+    }
+    
+    .table2 tr td {
+        padding: 10px;
+    }
+    
+    .tabletd {
+        text-align: right;
+    }
+</style>
+
+<body>
+
+    <table align="center" class="table1">
+        <caption>Menu Makana</caption><br>
+        <tr class="makanan">
+            <td>1</td>
+            <td>Hamburger</td>
+            <td>20.000</td>
+        </tr>
+        <tr class="makanan">
+            <td>2</td>
+            <td>Spageti</td>
+            <td>35.000</td>
+        </tr>
+        <tr class="makanan">
+            <td>3</td>
+            <td>Kebab</td>
+            <td>17.000</td>
+        </tr>
+    </table><br>
+    <center>
+        <p>Pilih Pesanan</p>
+        <input type="text" id="inputPilih" maxlength="1"> <button id="submit">Submit</button>
+        <br>
+        <p><span id="outpesan"></span></p>
+        <p id="text"></p>
+        <p id="p"></p>
+        <table class="table2">
+            <tr>
+                <td id="totalharga"></td>
+                <td id="titik1"></td>
+                <td id="hasil" class="tabletd"></td>
+            </tr>
+            <tr>
+                <td id="diskon"></td>
+                <td id="titik2"></td>
+                <td id="hasildiskon" class="tabletd"></td>
+            </tr>
+            <tr>
+                <td id="bayar"></td>
+                <td id="titik3"></td>
+                <td id="totalbayar" class="tabletd"></td>
+            </tr>
+        </table>
+    </center>
+</body>
+<script>
+    var inputPilih = document.getElementById('inputPilih');
+    var submit = document.getElementById('submit');
+    var outPesan = document.getElementById('outpesan');
+    var makanan = document.getElementsByClassName('makanan');
+    var p = document.getElementById('p');
+    var inisial = 1;
+
+
+    function textJumlah() {
+        //Muncul Text
+        var text = document.getElementById('text');
+        var a = document.createTextNode("Jika Pemesanan lebih dari 25 Porsi, maka Anda dapat diskon 20%");
+        var b = document.createTextNode('Jumlahnya :');
+        var el = document.createElement("p");
+        text.appendChild(a);
+        text.appendChild(el);
+        text.appendChild(b);
+
+    };
+
+    function fungsiJumlah() {
+        //Tampil Input
+        var b = document.createElement("input");
+        p.appendChild(b);
+        var inisJumlah = document.getElementsByTagName('input')[1];
+        inisJumlah.setAttribute('type', 'text');
+        inisJumlah.setAttribute('id', 'inputjumlah');
+        inisJumlah.setAttribute('placeholder', 'Ex.100');
+        inisJumlah.setAttribute('maxlength', '10');
+        inisJumlah.addEventListener('keypress', clickEnterInput, false);
+    };
+
+    function fungsiSubmit() {
+        var b = document.createElement("button");
+        p.appendChild(b);
+        var inisJumlah = document.getElementsByTagName('button')[1];
+        inisJumlah.setAttribute('id', 'inputsubmit');
+        document.getElementById('inputsubmit').innerHTML = "Submit";
+        var submitItem = document.querySelector('#p');
+        submit2 = submitItem.querySelector('#inputsubmit');
+        submit2.addEventListener('click', hitungHarga);
+        submit2.addEventListener('click', hitungDiskon);
+        submit2.addEventListener('click', hitungHargaBayar);
+    };
+
+    function hitungHarga() {
+        var inputJumlah = document.getElementById('inputjumlah');
+        var valueHar = inputJumlah.value;
+        totalHarga = harga * valueHar;
+        document.getElementById('totalharga').innerHTML = "Total Harga ";
+        document.getElementById('titik1').innerHTML = ":";
+        document.getElementById('hasil').innerHTML = totalHarga;
+    };
+
+
+    function hitungDiskon() {
+        var inputJumlah = document.getElementById('inputjumlah');
+        var valueHar = inputJumlah.value;
+        if (valueHar >= 25) {
+            diskon = totalHarga * 0.2;
+        } else {
+            diskon = 0;
+        }
+        document.getElementById('diskon').innerHTML = "Diskon ";
+        document.getElementById('titik2').innerHTML = ":";
+        document.getElementById('hasildiskon').innerHTML = diskon;
+    }
+
+    function hitungHargaBayar() {
+        hargaBayar = totalHarga - diskon;
+        document.getElementById('bayar').innerHTML = "Harga Bayar";
+        document.getElementById('titik3').innerHTML = ":";
+        document.getElementById('totalbayar').innerHTML = hargaBayar;
+    }
+
+    function all(inisial, nilai) {
+        if (inisial <= 1 || nilai > 0 && nilai > 4) {
+            textJumlah();
+            fungsiJumlah();
+            fungsiSubmit();
+        } else {
+
+        }
+    };
+
+    function pilihan() {
+        var nilai = inputPilih.value;
+        if (nilai > 0 && nilai < 4) {
+            switch (nilai) {
+                case "1":
+                    harga = 20000;
+                    text = "Hamburger";
+                    makanan[0].style.backgroundColor = "red";
+                    makanan[1].style.backgroundColor = "transparent";
+                    makanan[2].style.backgroundColor = "transparent";
+                    break;
+                case "2":
+                    harga = 35000;
+                    text = "Spageti";
+                    makanan[0].style.backgroundColor = "transparent";
+                    makanan[1].style.backgroundColor = "red";
+                    makanan[2].style.backgroundColor = "transparent";
+                    break;
+                case "3":
+                    harga = 17000;
+                    text = "Kebab";
+                    makanan[0].style.backgroundColor = "transparent";
+                    makanan[1].style.backgroundColor = "transparent";
+                    makanan[2].style.backgroundColor = "red";
+                    break;
+            }
+            outPesan.innerHTML = "Anda Memesan " + text + " Denga harga : " + harga + " /Porsi ";
+            all(inisial, nilai);
+            inisial += 1;
+        } else {
+            harga = 0;
+            outPesan.innerHTML = "Pilihan Anda tidak ada ";
+            makanan[0].style.backgroundColor = "transparent";
+            makanan[1].style.backgroundColor = "transparent";
+            makanan[2].style.backgroundColor = "transparent";
+        }
+
+    };
+
+    function clickEnter(key) {
+        if (key.keyCode == "13") {
+            pilihan();
+        }
+    };
+
+    function clickEnterInput(key) {
+        if (key.keyCode == "13") {
+            hitungHarga();
+            hitungDiskon();
+        }
+    };
+
+    inputPilih.addEventListener('keydown', clickEnter, false);
+    submit.addEventListener('click', pilihan);
+</script>
+
+</html>

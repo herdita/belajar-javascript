@@ -1,0 +1,88 @@
+<html>
+<style>
+    .black {
+        border: 1px solid red;
+    }
+    
+    .edit {
+        background: yellow;
+        color: black;
+    }
+</style>
+
+<body onload="alert('sudah selesai')">
+    <!-- //mengubah atribut dalam java script -->
+    <div id="box1">
+        <div id="p1">Paragrap</div>
+    </div>
+
+    <div class="boxes"></div>
+    <div class="boxes"></div>
+    <div class="boxes"></div>
+
+    <img src="img1.png" alt="" width=300 id="img" class="black" onclick="berubah()">
+    <br>
+    <input type="text" value=10 id="input">
+
+    <table id="table1">
+        <tr>
+            <td>Nama : herdita permana</td>
+            <td>kelas : Permana </td>
+        </tr>
+        <tr>
+            <td>Nama : herdita permana</td>
+            <td>kelas : Permana </td>
+        </tr>
+        <tr>
+            <td>Nama : herdita permana</td>
+            <td>kelas : Permana </td>
+        </tr>
+    </table>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+
+    <script>
+        //even pada javascript
+
+        // ada 3 penulisan even pada javascript
+        // 1).penulisan di tag html
+        // 2).peulisan di js
+        // 3).penulisan dengan addEventListener
+
+        var img = document.getElementById('img');
+        var input = document.getElementById('input');
+        var table1 = document.getElementById('table1');
+
+        // contoh penulisan di html dan js
+        function berubah() {
+            img.style.backgroundColor = 'red';
+            img.width = 400;
+        }
+
+        // penulisan di js
+        input.onclick = function() {
+            berubah2()
+        }
+
+        function berubah2() {
+            input.setAttribute('class', 'edit');
+        }
+
+        table1.addEventListener('mouseenter', function() {
+            table1.style.backgroundColor = 'yellow';
+        });
+
+        table1.addEventListener('mouseleave', function() {
+            table1.style.backgroundColor = 'red';
+        });
+
+        table1.addEventListener('click', function() {
+            table1.style.backgroundColor = 'transparent';
+        });
+    </script>
+</body>
+
+</html>

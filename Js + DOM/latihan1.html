@@ -1,0 +1,32 @@
+<html>
+
+<body>
+    <div id="box1"></div>
+
+    <div class="boxes"></div>
+    <div class="boxes"></div>
+    <div class="boxes"></div>
+
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+
+    <script>
+        //selektor
+        document.getElementById('box1').innerHTML = "sekolah Koding";
+
+        var boxes = document.getElementsByClassName('boxes');
+        boxes[0].innerHTML = "herdita Permana";
+        boxes[1].innerHTML = "dita eprmana";
+        boxes[2].innerHTML = "super sayan";
+
+        var list = document.getElementsByTagName('li');
+        list[0].innerHTML = "dita";
+        list[1].innerHTML = "permana";
+        list[2].innerHTML = "Sayan";
+    </script>
+</body>
+
+</html>

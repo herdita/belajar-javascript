@@ -1,0 +1,57 @@
+<html>
+
+<body>
+    <div id="box1">
+        <div id="p1">Paragrap</div>
+        <div id="p2">Paragrap</div>
+    </div>
+
+    <div id="isi">
+
+    </div>
+
+    <table>
+        <tr>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+        </tr>
+    </table>
+
+    <div class="boxes"></div>
+    <div class="boxes"></div>
+    <div class="boxes"></div>
+
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+
+    <script>
+        document.getElementById('box1').innerHTML = "herdita permana"; //untuk selektor id
+        var list = document.getElementsByClassName('boxes');
+        list[0].innerHTML = "Nama : herdita";
+        list[1].innerHTML = "kelas : if-3";
+        list[2].innerHTML = "Alamat : Bandung ";
+
+        var box = document.getElementById('box1');
+
+        var td = document.getElementsByTagName('td');
+        td[0].innerHTML = "Nama  : ";
+        td[1].innerHTML = "kelas : ";
+        td[2].innerHTML = "alamat : ";
+
+        var el = document.createElement("h2");
+        var text = document.createTextNode('pada suatu hari');
+        var tempat = document.getElementById('isi');
+
+        el.appendChild(text);
+        tempat.appendChild(el);
+
+        //remove
+        tempat.removeChild(el);
+    </script>
+</body>
+
+</html>

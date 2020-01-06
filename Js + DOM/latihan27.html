@@ -1,0 +1,45 @@
+<html>
+
+<head> </head>
+<style></style>
+
+<body>
+    Cari : <input type="text" id="input">
+    <button id="button">submit</button>
+    <br>
+    <div id="div"></div>
+
+</body>
+<script>
+    var button = document.getElementById('button');
+
+    var arr = [1, 2, 6, 7, 8, 4, 22, 11, 5, 9, 10, 43];
+
+    // filter dan find
+    // var arr1 = arr.filter(function(x) {
+    //     return x == 5;
+    // });
+
+    // var arr2 = arr.find(function(i) {
+    //     return i > 6;
+    // })
+
+    function hitung() {
+        var input = document.getElementById('input');
+        var div = document.querySelector('#div');
+        cari = input.value;
+        var hasilCari = arr.filter(function(x) {
+            return x == cari;
+        });
+        if (cari == hasilCari) {
+            alert("ditemukan");
+        } else {
+            alert("tidak di temukan");
+        }
+        div.innerHTML = hasilCari;
+    }
+
+    button.addEventListener('click', hitung);
+</script>
+
+</html>

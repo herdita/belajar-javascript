@@ -1,0 +1,84 @@
+<html>
+
+<head>
+    <title>Menu searching</title>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>Nama </td>
+            <td>:</td>
+            <td><input type="text" id="inputNama"></td>
+        </tr>
+        <tr>
+            <td>Kelas </td>
+            <td>:</td>
+            <td><input type="text" id="inputKelas"></td>
+        </tr>
+        <tr>
+            <td>Nilai </td>
+            <td>:</td>
+            <td><input type="text" id="inputNilai"></td>
+        </tr>
+    </table>
+    <button id="button"> Submit </button>
+    <table>
+        <tr>
+            <td>Nama </td>
+            <td>:</td>
+            <td>
+                <div id="tampilNama"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Kelas </td>
+            <td>:</td>
+            <td>
+                <div id="tampilKelas"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Indeks </td>
+            <td>:</td>
+            <td>
+                <div id="indeks"></div>
+            </td>
+        </tr>
+    </table>
+
+</body>
+<script>
+    function penamaan() {
+        nama = document.getElementById('inputNama');
+        kelas = document.getElementById('inputKelas');
+        nilai = document.getElementById('inputNilai');
+        button = document.getElementById('button');
+    };
+
+    function indeks(nilaivalue) {
+        if (nilaivalue >= 80) {
+            return "A";
+        } else if (nilaivalue >= 77) {
+            return "B";
+        } else if (nilaivalue >= 60) {
+            return "C";
+        } else {
+            return "D";
+        }
+    };
+
+    button.addEventListener('click', function() {
+        penamaan();
+        var namavalue = nama.value;
+        var kelasvalue = kelas.value;
+        var nilaivalue = nilai.value;
+        indeks(nilaivalue);
+
+        document.getElementById('tampilNama').innerHTML = namavalue.toUpperCase();
+        document.getElementById('tampilKelas').innerHTML = kelasvalue.toUpperCase();
+        document.getElementById('indeks').innerHTML = indeks(nilaivalue);
+    });
+</script>
+
+</html>

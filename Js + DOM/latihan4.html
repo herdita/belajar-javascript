@@ -1,0 +1,54 @@
+<html>
+<style>
+    .black {
+        border: 1px solid red;
+    }
+    
+    .merah {
+        background: yellow;
+        color: white;
+    }
+</style>
+
+<body>
+    <!-- //mengubah atribut dalam java script -->
+    <div id="box1">
+        <div id="p1">Paragrap</div>
+    </div>
+
+    <div class="boxes"></div>
+    <div class="boxes"></div>
+    <div class="boxes"></div>
+
+    <img src="img1.png" alt="" width=300 id="img" class="black">
+    <br>
+    <input type="text" value=10 id="input">
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+
+    <script>
+        //untuk js css
+
+        // class bisa menggunakan 
+        //     objek.setAttribute()
+        //     objek.className
+        //     objek.style.atributCss = value 
+
+        // merubah atribut di js
+        //     objek.atribut = value;
+
+        var img = document.getElementById('img');
+        img.width = 500;
+        img.className += ' merah';
+
+        var input = document.getElementById('input');
+        input.size = 400;
+        input.style.backgroundColor = 'red';
+        input.style.border = '10px solid blue';
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <title> latihan 1</title>
+</head>
+
+<body>
+    Nama : <input type="text" id="input"> <br> Umur : <input type="text" id="input"> <br> Ipk : <input type="text" id="input"> <br>
+    <button id="button">submit</button>
+    <div id="tampil"></div>
+
+</body>
+<script>
+    var button = document.getElementById('button');
+    var div = document.querySelector("#tampil");
+
+
+
+    var mhs = {
+        nama: "",
+        umur: 0,
+        ipk: 0,
+    };
+
+    function tampil() {
+        var input1 = document.querySelectorAll("#input");
+        var val_inp1 = input[0].value;
+        var val_inp2 = input[1].value;
+        var val_inp3 = input[2].value;
+        mhs.nama = val_inp1;
+        mhs.umur = val_inp2;
+        mhs.ipk = val_inp3;
+        div.innerHTML = 'hai nama saya ' + mhs.nama + ' umur saya ' + mhs.umur + ' ipk semester 1 ' + mhs.ipk;
+    }
+
+    button.addEventListener('click', tampil);
+</script>
+
+</html>

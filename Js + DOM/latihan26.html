@@ -1,0 +1,68 @@
+<html>
+
+<head> </head>
+<style></style>
+
+<body>
+    <div>posisi awal array</div>
+    <div id="div"></div>
+    <div id="div"></div>
+    <div id="div"></div>
+    <div id="div"></div>
+    <div id="div"></div>
+    <div id="div"></div>
+    <div id="div"></div>
+    <div id="div"></div>
+    <div id="div"></div>
+    <div id="div"></div>
+    <div id="div"></div>
+    <div id="div"></div>
+    <div>posisi sesudah di urutkan</div>
+    <div id="div"></div>
+    <div id="div"></div>
+    <div id="div"></div>
+    <div id="div"></div>
+    <div id="div"></div>
+    <div id="div"></div>
+    <div id="div"></div>
+    <div id="div"></div>
+    <div id="div"></div>
+    <div id="div"></div>
+    <div id="div"></div>
+    <div id="div"></div>
+
+
+</body>
+<script>
+    var div = document.querySelectorAll('#div');
+    var arr = [1, 2, 6, 7, 8, 4, 22, 11, 5, 9, 10, 43];
+    // for (var i = 0; i < arr.length; i++) {
+    //     console.log(i);
+    // }
+
+    // arr.forEach(function(i) {
+    //     console.log(i);
+    // })
+
+    // var a = arr.map(function(i) {
+    //     return i;
+    // })
+
+
+    arr.forEach(function(e, i) {
+        console.log('index ke ' + (i) + ' adalah ' + e);
+        div[i].innerHTML = 'index ke ' + (i + 1) + ' adalah ' + e;
+    });
+
+    arr.sort(function(a, b) {
+        return a - b;
+    });
+    var a = arr.forEach(function(e, i) {
+        console.log('index ke ' + (i) + ' adalah ' + e);
+        div[i + arr.length].innerHTML = 'index ke ' + (i + 1) + ' adalah ' + e;
+    });
+
+    // div.innerHTML = a.join(' - ');
+</script>
+
+</html>

@@ -1,0 +1,95 @@
+<html>
+
+<head>
+    <title>Menu searching</title>
+</head>
+<style>
+    .kotak {
+        margin-right: 8;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        float: left;
+    }
+</style>
+
+<body>
+    <button id="submitAdd">Add</button>
+    <button id="submitRem">Remove</button>
+    <button id="submitBlue">Blue</button>
+    <button id="submitGreen">Green</button>
+
+    <br style="clear:both">
+    <div class="kotak"></div>
+    <div class="kotak"></div>
+    <div class="kotak"></div>
+    <div class="kotak"></div>
+    <div class="kotak"></div>
+    <div class="kotak"></div>
+    <div class="kotak"></div>
+    <div class="kotak"></div>
+    <div class="kotak"></div>
+    <div class="kotak"></div>
+    <div class="kotak"></div>
+    <div class="kotak"></div>
+    <div class="kotak"></div>
+    <div class="kotak"></div>
+    <div class="kotak"></div>
+    <div class="kotak"></div>
+</body>
+<script>
+    var submitAdd = document.getElementById('submitAdd');
+    var submitRem = document.getElementById('submitRem');
+    var submitBlue = document.getElementById('submitBlue');
+    var submitGreen = document.getElementById('submitGreen');
+    var box = [];
+    var i = 1;
+
+    function add() {
+        if (i < 16) {
+            var jum = document.getElementsByClassName('kotak');
+            jum[i].style.width = 100 + "px";
+            jum[i].style.height = 100 + "px";
+            jum[i].style.background = "red";
+
+            i++
+        } else {
+            alert("Nilai Sudah Max");
+        }
+
+    };
+
+    function remove() {
+        if (i > 0) {
+            i--;
+            var jum = document.getElementsByClassName('kotak');
+            jum[i].style.width = 0 + "px";
+            jum[i].style.height = 0 + "px";
+            jum[i].style.background = "transparent";
+        } else {
+            alert("stop");
+        }
+    };
+
+    function blue() {
+
+        jum = document.getElementsByClassName('kotak');
+        for (var x = 0; x <= i; x++) {
+            jum[x].style.background = "Blue";
+        };
+    };
+
+    function green() {
+
+        jum = document.getElementsByClassName('kotak');
+        for (var x = 0; x <= i; x++) {
+            jum[x].style.background = "green";
+        };
+    };
+
+    submitAdd.addEventListener('click', add);
+    submitRem.addEventListener('click', remove);
+    submitBlue.addEventListener('click', blue);
+    submitGreen.addEventListener('click', green);
+</script>
+
+</html>

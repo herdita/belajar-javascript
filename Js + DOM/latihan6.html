@@ -1,0 +1,90 @@
+<html>
+<style>
+    .black {
+        border: 1px solid red;
+    }
+    
+    .edit {
+        background: yellow;
+        color: black;
+    }
+</style>
+
+<body>
+    <!-- //mengubah atribut dalam java script -->
+    <div id="box1">
+        <div id="p1">Paragrap</div>
+    </div>
+
+    <div class="boxes"></div>
+    <div class="boxes"></div>
+    <div class="boxes"></div>
+
+    <img src="img1.png" alt="" width=300 id="img" class="black" onclick="berubah()">
+    <br>
+    <input type="text" value=10 id="input">
+    <input type="submit" id="submit"> Namanya adalah <span id="span"></span>
+    <table id="table1">
+        <tr>
+            <td>Nama : herdita permana</td>
+            <td>kelas : Permana </td>
+        </tr>
+        <tr>
+            <td>Nama : herdita permana</td>
+            <td>kelas : Permana </td>
+        </tr>
+        <tr>
+            <td>Nama : herdita permana</td>
+            <td>kelas : Permana </td>
+        </tr>
+    </table>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+
+    <script>
+        //even pada javascript
+
+        // ada 3 penulisan even pada javascript
+        // 1).penulisan di tag html
+        // 2).peulisan di js
+        // 3).penulisan dengan addEventListener
+
+        var img = document.getElementById('img');
+        var input = document.getElementById('input');
+        var table1 = document.getElementById('table1');
+        var submit = document.getElementById('submit');
+        var span = document.getElementById('span');
+
+        function berubah() {
+            img.style.backgroundColor = "red";
+        };
+
+        function berubahInput() {
+            input.style.backgroundColor = "yellow";
+        }
+
+        function berubahInputLeave() {
+            input.style.backgroundColor = "transparent";
+        }
+
+        // function sub() {
+        //     var text = input.value;
+        //     span.innerHTML = text;
+        // }
+
+        submit.onclick = function() {
+            var text = input.value;
+            span.innerHTML = text;
+        };
+
+        input.addEventListener('click', berubah);
+        input.addEventListener('mouseenter', berubahInput);
+        input.addEventListener('mouseleave', berubahInputLeave);
+        // submit.addEventListener('click', sub);
+    </script>
+</body>
+
+</html>

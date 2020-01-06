@@ -1,0 +1,39 @@
+<html>
+
+<head> </head>
+<style></style>
+
+<body>
+    <p>1. Rp2000</p>
+    <p>2. Rp2300</p>
+    <p>3. Rp2000</p>
+    <input type="text" id="input">
+    <button id="button">submit</button>
+</body>
+<script>
+    var input = document.getElementById('input');
+    var div = document.getElementsByClassName('div');
+    var button = document.getElementById('button');
+
+
+    function nilai() {
+        var valueInput = input.value;
+        switch (valueInput) {
+            case "1":
+                alert();
+                break;
+
+            case "2":
+                alert("Rp.3000");
+                break;
+
+            case "3":
+                alert("Rp.2000");
+                break;
+        };
+    };
+
+    button.addEventListener('click', nilai);
+</script>
+
+</html>

@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <title>Menu searching</title>
+</head>
+
+<body>
+    <input type="text" id="addInput"> <button id="buttonAdd">Add</button> <button id="buttonRemove">Remove</button>
+    <div id="tampilArray"></div>
+</body>
+<script>
+    var buttonAdd = document.getElementById('buttonAdd');
+    var buttonRem = document.getElementById('buttonRemove');
+    var Input = document.getElementById('addInput');
+    var namaOrang = [];
+    var i = 0;
+
+    function add() {
+        var addInput = document.getElementById('addInput');
+        var valueAdd = addInput.value;
+        namaOrang[i] = valueAdd;
+        i++;
+        document.getElementById('tampilArray').innerHTML = namaOrang.join(" | ");
+    };
+
+    function remove() {
+        namaOrang.pop();
+        i--;
+        document.getElementById('tampilArray').innerHTML = namaOrang.join(" | ");
+    };
+
+    function clickEnter(key) {
+        if (key.keyCode == "13") {
+            add();
+        }
+    };
+
+    Input.addEventListener('click', clickEnter, false);
+
+    buttonAdd.addEventListener('click', add);
+
+    buttonRem.addEventListener('click', remove);
+
+    // buttonRem.addEventListener('click', function() {
+    //     remove();
+    // });
+</script>
+
+</html>

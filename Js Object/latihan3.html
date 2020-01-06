@@ -1,0 +1,58 @@
+<html>
+
+<head>
+    <title> latihan 2</title>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>Nama</td>
+            <td><input type="text" id="input"></td>
+        </tr>
+        <tr>
+            <td>Nim</td>
+            <td><input type="text" id="input"></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><input type="text" id="input"></td>
+        </tr>
+        <tr>
+            <td>Jurusan</td>
+            <td><input type="text" id="input"></td>
+        </tr>
+        <tr>
+            <td><button id="submit">Submit</button></td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <div id="out"></div>
+        </tr>
+        <tr>
+            <div id="out"></div>
+        </tr>
+        <tr>
+            <div id="out"></div>
+        </tr>
+        <tr>
+            <div id="out"></div>
+        </tr>
+    </table>
+</body>
+<script>
+    var button = document.getElementById('submit');
+    var div = document.querySelectorAll('#out')[1];
+
+    function Mahasiswa(nama, nim, email, jurusan) {
+        this.nama = nama;
+        this.nim = nim;
+        this.email = email;
+        this.jurusan = jurusan;
+    };
+
+    var mahasiswa = new Mahasiswa('Herdita', '10116136', 'herditapermana@gmail.com', 'informatika');
+</script>
+
+</html>

@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <title></title>
+</head>
+<style>
+    .div {
+        background-color: red;
+        width: 100px;
+        height: 100px;
+    }
+    
+    button {
+        position: ;
+    }
+</style>
+
+<body>
+    <div id="div" class="div"></div>
+    <button id="klik">Button</button>
+    <button id="klik1">Button1</button>
+</body>
+<script>
+    var y = 100;
+
+    var div = document.getElementById('div');
+    var button = document.getElementById('klik');
+    var button1 = document.getElementById('klik1');
+
+    button.addEventListener('click', function() {
+        var acak1 = (Math.random() * y + 30).toFixed(0);
+        var acak2 = (Math.random() * y + 30).toFixed(0);
+        div.style.width = acak1;
+    });
+
+    button1.addEventListener('click', function() {
+        var acak1 = (Math.random() * y + 30).toFixed(0);
+        var acak2 = (Math.random() * y + 30).toFixed(0);
+        div.style.height = acak2;
+    });
+
+    for (var i = 1; i <= 10; i++) {
+        alert(i);
+    }
+</script>
+
+</html>

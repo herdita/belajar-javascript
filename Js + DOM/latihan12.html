@@ -1,0 +1,46 @@
+<html>
+
+<style>
+    #persegi {
+        width: 200px;
+        height: 200px;
+        background: red;
+    }
+</style>
+
+<body>
+    <center></center>
+    <div id="persegi"></div>
+    </center>
+    Panjang : <input id="input" type="number" step="10" onchange="persegi.style.width = this.value+'px'"><br><br> Lebar : <input id="input1" type="number" step="10" onchange="persegi.style.height = this.value+'px'">
+</body>
+<script>
+    var persegi = document.querySelector("#persegi");
+    persegi.style.transition = "width 1s steps(100) 0s , height 1s steps(100) 0s";
+
+    input = document.getElementById('input');
+    input1 = document.getElementById('input1');
+
+    // persegi.addEventListener('transitionend', function() {
+    //     var nilai = input.value;
+    //     var nilai1 = input1.value;
+    //     if (nilai > 100 || nilai1 > 100) {
+    //         persegi.style.width = "200px";
+    //         persegi.style.height = "200px";
+    //         persegi.style.background = "red";
+    //     } else {
+    //         persegi.style.background = "yellow";
+    //     }
+    // })
+
+    persegi.addEventListener('mousewheel', function() {})
+    persegi.addEventListener('mouseover', function() {
+        persegi.style.backgroundColor = "blue";
+    });
+    persegi.addEventListener('mouseleave', function() {
+        persegi.style.backgroundColor = "red";
+    })
+</script>
+
+
+</html>
